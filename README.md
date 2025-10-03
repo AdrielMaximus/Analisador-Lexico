@@ -46,8 +46,10 @@ Estrutura: ASSIGN (=), PLUS (+), SEMI (;), LPAREN (() )
 Tratamento de Erros: qualquer caractere não reconhecido gera MISMATCH
 
 
+US ENGLISH
 
-🇺🇸 English
+
+
 ✨ Project Overview
 This is a simple Lexical Analyzer (Lexer) built in Python 🐍 with a Tkinter GUI.
 It works as the first stage of a compiler, reading C source code (.c) and converting it into a structured list of Tokens.
@@ -86,7 +88,12 @@ Structure: ASSIGN (=), PLUS (+), SEMI (;), LPAREN (() )
 
 Error Handling: any unrecognized character triggers a MISMATCH
 
-🇩🇪 Deutsch
+
+
+DE DEUTSCH
+
+
+
 ✨ Projektübersicht
 Dies ist ein einfacher Lexikalischer Analysator (Lexer) in Python 🐍 mit einer Tkinter-GUI.
 Er fungiert als erste Stufe eines Compilers, liest C-Quellcode (.c) und wandelt ihn in eine strukturierte Liste von Tokens um.
