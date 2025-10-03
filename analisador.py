@@ -3,34 +3,37 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext
 
 # -----------------------------
-# 1. Definição dos TOKENS
+# 1. Definição dos TOKENS como uma lista contendo seus valores e seus respectivos regex
 # -----------------------------
 token_specs = [
     ("NUM_FLOAT", r'\d+\.\d+'),
     ("NUM_INT",   r'\d+'),
     ("ID",        r'[a-zA-Z_]\w*'),
-    ("ASSIGN",    r'='),
-    ("EQ",        r'=='),
-    ("PLUS",      r'\+'),
-    ("MINUS",     r'-'),
-    ("MUL",       r'\*'),
+    ("ATRIBUICAO",    r'='),
+    ("IGUAL",         r'=='),
+    ("MAIS",      r'\+'),
+    ("MENOS",     r'-'),
+    ("MULT",      r'\*'),
     ("DIV",       r'/'),
-    ("LT",        r'<'),
-    ("GT",        r'>'),
-    ("LPAREN",    r'\('),
-    ("RPAREN",    r'\)'),
-    ("LBRACE",    r'\{'),
-    ("RBRACE",    r'\}'),
-    ("SEMI",      r';'),
-    ("SKIP",      r'[ \t]+'),
-    ("NEWLINE",   r'\n'),
-    ("MISMATCH",  r'.'),
+    # CORREÇÃO AQUI: 'MENOR_QUE' deve ser usado para o símbolo '<'
+    ("MENOR_QUE", r'<'),
+    ("MAIOR_QUE", r'>'),
+    ("ABRE_PARENTESE",    r'\('),
+    ("FECHA_PARENTESE",   r'\)'),
+    ("ABRE_CHAVE",    r'\{'),
+    ("FECHA_CHAVE",   r'\}'),
+    ("PONTO_VIRGULA",     r';'),
+    ("PULAR",     r'[ \t]+'),
+    ("NOVA_LINHA",  r'\n'),
+    ("NAO_CORRESPONDE", r'.'),
 ]
-
+# -----------------------------
+# Transforma o regex no formato ("MENOS",     r'-') para ((?P<{MENOS}>{'-'})) que é um formato especial para a biblioteca re (Expressões Regulares) chamado Captura Nomeada que serve como um rotulo para cada regra
+# -----------------------------
 regex_parts = []
 for name, regex in token_specs:
     regex_parts.append(f"(?P<{name}>{regex})")
-master_regex = re.compile("|".join(regex_parts))
+master_regex = re.compile("|".join(regex_parts)) #compila tudo em uma lista gigante. regra (a) | regra (b)|....
 
 # -----------------------------
 # 2. Função do analisador léxico
@@ -38,9 +41,9 @@ master_regex = re.compile("|".join(regex_parts))
 def lexer(code):
     tokens = []
     line_num = 1
-    for match in master_regex.finditer(code):
-        kind = match.lastgroup
-        value = match.group()
+    for match in master_regex.finditer(code): # VARRE O CODIGO INTEIRO
+        kind = match.lastgroup # extrai o nome do rotulo compativel
+        value = match.group()# extrai o valor do rotulo compativel
         if kind == "NUM_INT":
             tokens.append((kind, int(value)))
         elif kind == "NUM_FLOAT":
@@ -50,11 +53,11 @@ def lexer(code):
                 tokens.append((value.upper(), value))
             else:
                 tokens.append((kind, value))
-        elif kind == "NEWLINE":
+        elif kind == "NOVA_LINHA":
             line_num += 1
-        elif kind == "SKIP":
+        elif kind == "PULAR":
             continue
-        elif kind == "MISMATCH":
+        elif kind == "NAO_CORRESPONDE":
             raise RuntimeError(f"Token inválido '{value}' na linha {line_num}")
         else:
             tokens.append((kind, value))
@@ -65,7 +68,7 @@ def lexer(code):
 # -----------------------------
 class LexicalAnalyzerApp:
     def __init__(self, root):
-        self.root = root
+        self.root = root # É a criação de um atributo para o objeto (self) que está sendo inicializado.
         self.root.title("Analisador Léxico - Arquivos C")
         self.file_path = None
         self.file_content = None
