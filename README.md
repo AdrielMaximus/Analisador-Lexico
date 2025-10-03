@@ -18,9 +18,9 @@ Requisitos: Certifique-se de ter o Python 3.x e o Tkinter instalados.
 
 Execução: Salve o código e rode-o diretamente:
 
-Bash
+*python seu_analisador.py*
 
-python seu_analisador.py
+
 Análise: Clique em "Abrir Arquivo .c", selecione um arquivo, e então clique em "Iniciar Análise Léxica" para ver o resultado na caixa de texto.
 
 🧩 Tokens Reconhecidos
@@ -51,9 +51,9 @@ Requirements: Ensure you have Python 3.x and Tkinter installed.
 
 Execution: Save the code and run it directly:
 
-Bash
 
-python your_analyzer.py
+*python your_analyzer.py*
+
 Analysis: Click "Open .c File", select a file, and then click "Start Lexical Analysis" to see the output in the text box.
 
 🧩 Recognized Tokens
@@ -84,9 +84,11 @@ Voraussetzungen: Stellen Sie sicher, dass Python 3.x und Tkinter installiert sin
 
 Ausführung: Speichern Sie den Code und führen Sie ihn direkt aus:
 
-Bash
 
-python ihr_analysator.py
+
+*python ihr_analysator.py*
+
+
 Analyse: Klicken Sie auf "C-Datei öffnen", wählen Sie eine Datei aus und klicken Sie dann auf "Lexikalische Analyse starten", um die Ausgabe im Textfeld zu sehen.
 
 🧩 Erkannte Tokens
