@@ -1,103 +1,127 @@
+# 🐍 Lexical Analyzer (Lexer) Project 🔎
 
+Uma ferramenta educativa para analisar código C e transformá-lo em **tokens**! 💻✨
 
-🐍 Lexical Analyzer (Lexer) Project 🔎
-🇧🇷 Português
-✨ Visão Geral do Projeto
-Este é um Analisador Léxico (Lexer) simples, construído em Python 🐍 com uma Interface Gráfica (GUI) em Tkinter. Ele funciona como a primeira etapa de um compilador, lendo o código-fonte C (.c) e o transformando em uma lista estruturada de Tokens.
+---
 
-🛠️ Componentes Principais
-Componente	Função	Emoji
-token_specs	Define todas as regras (Regex) e seus rótulos (NUM_INT, PLUS).	🏷️
-master_regex	A Super-Regra compilada que varre o código de forma eficiente.	🚀
-lexer(code)	A função central que reconhece, processa e descarta (como SKIP) os caracteres.	🧠
-LexicalAnalyzerApp	A interface gráfica (GUI) para carregar arquivos e exibir a saída.	🖥️
-▶️ Como Executar
-Para colocar este analisador em funcionamento, siga os passos:
+## 🇧🇷 Português
 
-Requisitos: Certifique-se de ter o Python 3.x e o Tkinter instalados.
+### ✨ Visão Geral do Projeto
+Este é um **Analisador Léxico (Lexer)** simples, desenvolvido em **Python 🐍** com interface gráfica usando **Tkinter**.  
+Ele atua como a primeira etapa de um compilador, lendo código-fonte C (`.c`) e transformando-o em uma lista estruturada de **Tokens**.
 
-Execução: Salve o código e rode-o diretamente:
+### 🛠️ Componentes Principais
 
-*python seu_analisador.py*
+| Componente | Função | Emoji |
+|------------|--------|-------|
+| `token_specs` | Define todas as regras (Regex) e seus rótulos (`NUM_INT`, `PLUS`, etc.) | 🏷️ |
+| `master_regex` | Super-regra compilada que varre o código de forma eficiente | 🚀 |
+| `lexer(code)` | Função central que reconhece, processa e descarta caracteres (como `SKIP`) | 🧠 |
+| `LexicalAnalyzerApp` | Interface gráfica (GUI) para carregar arquivos e exibir o resultado | 🖥️ |
 
+### ▶️ Como Executar
 
-Análise: Clique em "Abrir Arquivo .c", selecione um arquivo, e então clique em "Iniciar Análise Léxica" para ver o resultado na caixa de texto.
+**Requisitos:**  
+- Python 3.x  
+- Tkinter instalado
+
+**Execução:**  
+
+python seu_analisador.py
+Análise:
+
+Clique em "Abrir Arquivo .c"
+
+Selecione o arquivo desejado
+
+Clique em "Iniciar Análise Léxica" para ver os tokens na caixa de texto
 
 🧩 Tokens Reconhecidos
-O analisador traduz o código em pares (TIPO, VALOR), reconhecendo:
-
 Tipos e Palavras-chave: INT, IF, WHILE
 
 Dados: NUM_INT, NUM_FLOAT
 
-Estrutura: ASSIGN (=), PLUS (+), SEMI (;), LPAREN (()
+Estrutura: ASSIGN (=), PLUS (+), SEMI (;), LPAREN (() )
 
-Tratamento de Erros: Qualquer caractere não reconhecido gera um MISMATCH.
+Tratamento de Erros: qualquer caractere não reconhecido gera MISMATCH
+
+
 
 🇺🇸 English
 ✨ Project Overview
-This is a simple Lexical Analyzer (Lexer), built in Python 🐍 with a Graphical User Interface (GUI) using Tkinter. It functions as the first stage of a compiler, reading C source code (.c) and transforming it into a structured list of Tokens.
+This is a simple Lexical Analyzer (Lexer) built in Python 🐍 with a Tkinter GUI.
+It works as the first stage of a compiler, reading C source code (.c) and converting it into a structured list of Tokens.
 
 🛠️ Core Components
 Component	Function	Emoji
-token_specs	Defines all rules (Regex) and their labels (NUM_INT, PLUS).	🏷️
-master_regex	The compiled Super-Rule that efficiently scans the code.	🚀
-lexer(code)	The central function that recognizes, processes, and discards (like SKIP) characters.	🧠
-LexicalAnalyzerApp	The GUI for loading files and displaying the output.	🖥️
+token_specs	Defines all rules (Regex) and labels (NUM_INT, PLUS, etc.)	🏷️
+master_regex	Compiled super-rule that efficiently scans the code	🚀
+lexer(code)	Core function that recognizes, processes, and discards characters (like SKIP)	🧠
+LexicalAnalyzerApp	GUI to load files and display output	🖥️
+
 ▶️ How to Run
-To get this analyzer running, follow these steps:
+Requirements:
 
-Requirements: Ensure you have Python 3.x and Tkinter installed.
+Python 3.x
 
-Execution: Save the code and run it directly:
+Tkinter installed
 
+Execution:
 
-*python your_analyzer.py*
+python your_analyzer.py
+Analysis:
 
-Analysis: Click "Open .c File", select a file, and then click "Start Lexical Analysis" to see the output in the text box.
+Click "Open .c File"
+
+Select a file
+
+Click "Start Lexical Analysis" to see the tokens in the text box
 
 🧩 Recognized Tokens
-The analyzer translates the code into (TYPE, VALUE) pairs, recognizing:
-
 Types and Keywords: INT, IF, WHILE
 
 Data: NUM_INT, NUM_FLOAT
 
-Structure: ASSIGN (=), PLUS (+), SEMI (;), LPAREN (()
+Structure: ASSIGN (=), PLUS (+), SEMI (;), LPAREN (() )
 
-Error Handling: Any unrecognized character throws a MISMATCH.
+Error Handling: any unrecognized character triggers a MISMATCH
 
 🇩🇪 Deutsch
 ✨ Projektübersicht
-Dies ist ein einfacher Lexikalischer Analysator (Lexer), der in Python 🐍 mit einer Grafischen Benutzeroberfläche (GUI) unter Verwendung von Tkinter erstellt wurde. Er fungiert als erste Stufe eines Compilers, indem er C-Quellcode (.c) liest und diesen in eine strukturierte Liste von Tokens umwandelt.
+Dies ist ein einfacher Lexikalischer Analysator (Lexer) in Python 🐍 mit einer Tkinter-GUI.
+Er fungiert als erste Stufe eines Compilers, liest C-Quellcode (.c) und wandelt ihn in eine strukturierte Liste von Tokens um.
 
 🛠️ Hauptkomponenten
 Komponente	Funktion	Emoji
-token_spezifikationen	Definiert alle Regeln (Regex) und ihre Labels (GANZE_ZAHL, PLUS).	🏷️
-master_regex	Die kompilierte Super-Regel, die den Code effizient scannt.	🚀
-lexer(code)	Die zentrale Funktion, die Zeichen erkennt, verarbeitet und verwirft (wie UEBERSPRINGEN).	🧠
-LexikalischerAnalysatorApp	Die GUI zum Laden von Dateien und Anzeigen der Ausgabe.	🖥️
+token_specs	Definiert alle Regeln (Regex) und Labels (GANZE_ZAHL, PLUS, etc.)	🏷️
+master_regex	Kompilierte Super-Regel, die den Code effizient scannt	🚀
+lexer(code)	Kernfunktion, die Zeichen erkennt, verarbeitet und verwirft (wie UEBERSPRINGEN)	🧠
+LexicalAnalyzerApp	GUI zum Laden von Dateien und Anzeigen der Ausgabe	🖥️
+
 ▶️ Ausführung
-Um diesen Analysator auszuführen, folgen Sie diesen Schritten:
+Voraussetzungen:
 
-Voraussetzungen: Stellen Sie sicher, dass Python 3.x und Tkinter installiert sind.
+Python 3.x
 
-Ausführung: Speichern Sie den Code und führen Sie ihn direkt aus:
+Tkinter installiert
 
-
-
-*python ihr_analysator.py*
+Ausführung:
 
 
-Analyse: Klicken Sie auf "C-Datei öffnen", wählen Sie eine Datei aus und klicken Sie dann auf "Lexikalische Analyse starten", um die Ausgabe im Textfeld zu sehen.
+python ihr_analysator.py
+Analyse:
+
+Klicken Sie auf "C-Datei öffnen"
+
+Datei auswählen
+
+Klicken Sie auf "Lexikalische Analyse starten", um die Tokens im Textfeld zu sehen
 
 🧩 Erkannte Tokens
-Der Analysator übersetzt den Code in (TYP, WERT)-Paare und erkennt:
-
 Typen und Schlüsselwörter: INT, IF, WHILE
 
 Daten: GANZE_ZAHL, GLEITKOMMA_ZAHL
 
-Struktur: ZUWEISUNG (=), PLUS (+), SEMICOLON (;), LINKSPARENTHESE (()
+Struktur: ZUWEISUNG (=), PLUS (+), SEMICOLON (;), LINKSPARENTHESE (() )
 
-Fehlerbehandlung: Jedes nicht erkannte Zeichen löst eine FEHLANPASSUNG aus.
+Fehlerbehandlung: jedes nicht erkannte Zeichen löst eine FEHLANPASSUNG aus
