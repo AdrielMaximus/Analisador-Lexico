@@ -1,4 +1,4 @@
-Que excelente ideia! Vamos refazer o README.md com um bom floreio (emojis, estilo e uma estrutura mais visual) em todos os três idiomas.
+
 
 🐍 Lexical Analyzer (Lexer) Project 🔎
 🇧🇷 Português
